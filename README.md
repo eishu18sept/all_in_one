@@ -1,16 +1,19 @@
 # all_in_one
 
-A new Flutter project.
+A Flutter Project which helps you to understand how to work with different routes and pages in Flutter
 
-## Getting Started
+View here = https://drive.google.com/file/d/1qiAuP8zUjQ6HRZglcoWYe06e3LCtjFBR/view?usp=sharing
 
-This project is a starting point for a Flutter application.
+The project has 5 different apps 
+1) Calculator 
+2) Bill Splitter
+3) Weather App
+4) Todo App
+5) Movie Info 
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Run the project in your system
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1) Clone the repo using  "git clone https://github.com/eishu18sept/all_in_one.git"
+2) Run "flutter pub get" in terminal to get all the dependencies
+3) Finally connect a simulator and "flutter run" to start the project on your simulator .
