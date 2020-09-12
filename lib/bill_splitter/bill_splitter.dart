@@ -37,9 +37,12 @@ class _BillSplitterState extends State<BillSplitter> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text(
-          "Bill Splitter",
-        ),
+        backgroundColor: Colors.black,
+        title: Text("Bill Splitter"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context, rootNavigator: true).pop(context),
+        ), 
       ),
       body: Container(
         margin: EdgeInsets.only(

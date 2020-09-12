@@ -1,3 +1,5 @@
+import 'package:all_in_one/weather_app/screens/city_screen.dart';
+import 'package:all_in_one/weather_app/screens/location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:all_in_one/weather_app/screens/loading_screen.dart';
 
@@ -11,7 +13,7 @@ class WeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: LoadingScreen(),
+      home: LocationScreen(),
     );
   }
 }

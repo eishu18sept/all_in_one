@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:all_in_one/todo_app/todo_home.dart';
 
 class ToDo extends StatefulWidget {
   static String id = 'todo' ;
@@ -11,17 +12,8 @@ class ToDo extends StatefulWidget {
 class _ToDoState extends State<ToDo> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        title: Text("To-Do App"),
-      ),
-      backgroundColor: Colors.pink,
-      body: Center(
-        child: Text(
-          "Coming Soon",
-        ),
-      )
+    return MaterialApp(
+      home: TaskScreen(),
     );
   }
 }

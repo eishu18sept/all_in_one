@@ -49,63 +49,86 @@ class _LocationScreenState extends State<LocationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text("Weather Info"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context, rootNavigator: true).pop(context),
+        ),
+      ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            backgroundColor: Colors.black,         
+            child: Icon(
+              Icons.refresh,
+              color: Colors.white,
+            ),
+            onPressed: () async{
+              var weatherData = await weather.getLocationWeather();
+              updateUI(weatherData);
+            },
+            heroTag: null,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          FloatingActionButton(  
+            backgroundColor: Colors.black,         
+            child: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            onPressed: () async{
+              var typedName = await Navigator.push(context, MaterialPageRoute(builder: (context){
+                return CityScreen();
+              }));
+              if(typedName != null) {
+                var weatherData = await weather.getCityWeather(typedName);
+                  updateUI(weatherData);
+                }
+              },
+              heroTag: null,
+            )
+          ]
+        ),
+
       body: Container(
         color: Colors.green[200],
         constraints: BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  FlatButton(
-                    onPressed: () async{
-                      var weatherData = await weather.getLocationWeather();
-                      updateUI(weatherData);
-                    },
-                    child: Icon(
-                      Icons.near_me,
-                      size: 50.0,
-                    ),
-                  ),
-                  FlatButton(
-                    onPressed: () async{
-                      var typedName = await Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return CityScreen();
-                      }));
-                      if(typedName != null) {
-                        var weatherData = await weather.getCityWeather(typedName);
-                        updateUI(weatherData);
-                      }
-                    },
-                    child: Icon(
-                      Icons.location_city,
-                      size: 50.0,
-                    ),
-                  ),
-                ],
-              ),
               Padding(
                 padding: EdgeInsets.only(left: 15.0),
                 child: Row(
                   children: <Widget>[
-                    Text(
-                      '$temperature°',
-                      textAlign: TextAlign.center,
-                      style: kTempTextStyle,
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Text(
+                        '$temperature°',
+                        textAlign: TextAlign.center,
+                        style: kTempTextStyle,
+                      ),
                     ),
-                    Text(
-                      weatherIcon,
-                      style: kConditionTextStyle,
-                      textAlign: TextAlign.center,
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Text(
+                        weatherIcon,
+                        style: kConditionTextStyle,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(15.0),
+              Container(
+                margin: EdgeInsets.only(bottom: 70.0),
+                padding: EdgeInsets.all(25.0),
                 child: Text(
                   '$weatherMessage in $cityName',
                   textAlign: TextAlign.center,
