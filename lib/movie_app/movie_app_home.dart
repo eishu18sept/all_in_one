@@ -41,7 +41,12 @@ class _MovieAppState extends State<MovieApp> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text("Movie Info"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context, rootNavigator: true).pop(context),
+        ), 
       ),
       backgroundColor: Colors.green[200],
       body: Container(

@@ -1,4 +1,3 @@
-import 'package:all_in_one/app_home/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
@@ -103,12 +102,15 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text(
-          "Calculator",
-        ),
+        backgroundColor: Colors.black,
+        title: Text("Calculator"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context, rootNavigator: true).pop(context),
+        ), 
       ),
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
