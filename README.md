@@ -11,6 +11,10 @@ The project has 5 different apps
 4) Todo App
 5) Movie Info 
 
+## Understanding the project
+1) Go to main.dart to see all the screens and routes of our app
+2) Look at welcome.dart in app_home folder and observe how every app is linked together inside one complete Flutter Project
+
 
 ## Run the project in your system
 
