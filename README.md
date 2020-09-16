@@ -9,7 +9,6 @@ The project has 5 different apps
 2) Bill Splitter
 3) Weather App
 4) Todo App
-5) Movie Info 
 
 ## Understanding the project
 1) Go to main.dart to see all the screens and routes of our app
