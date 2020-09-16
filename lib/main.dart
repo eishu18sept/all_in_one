@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:all_in_one/bill_splitter/bill_splitter.dart';
 import 'package:all_in_one/app_home/welcome.dart';
 import 'package:all_in_one/weather_app/weather_app_home.dart';
-import 'package:all_in_one/movie_app/movie_app_home.dart';
 import 'package:all_in_one/todo_app/todo_app_home.dart';
 
 void main() {
@@ -29,7 +28,6 @@ class AllInOne extends StatelessWidget {
         Calculator.id : (context) => Calculator(),
         BillSplitter.id : (context) => BillSplitter(),
         WeatherApp.id : (context) => WeatherApp(),
-        MovieApp.id : (context) => MovieApp(),
         ToDo.id : (context) => ToDo(),
       },
     );

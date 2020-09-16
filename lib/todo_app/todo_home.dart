@@ -1,7 +1,4 @@
-import 'package:all_in_one/app_home/welcome.dart';
-import 'package:all_in_one/movie_app/movie_app_home.dart';
 import 'package:all_in_one/todo_app/add_task_screen.dart';
-import 'package:all_in_one/todo_app/todo_app_home.dart';
 import 'package:flutter/material.dart';
 import 'package:all_in_one/todo_app/widgets/task_list.dart';
 import 'package:all_in_one/todo_app/models/tasks.dart';

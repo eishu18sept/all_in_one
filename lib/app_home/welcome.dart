@@ -3,7 +3,6 @@ import 'package:all_in_one/bill_splitter/bill_splitter.dart';
 import 'package:flutter/material.dart';
 import 'package:all_in_one/todo_app/todo_app_home.dart';
 import 'package:all_in_one/weather_app/weather_app_home.dart';
-import 'package:all_in_one/movie_app/movie_app_home.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static String id = 'welcome_screen' ;
@@ -111,28 +110,6 @@ class WelcomeScreen extends StatelessWidget {
                   height: 20.0,
                   child: Text(
                     'Todo App',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-                child: MaterialButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, MovieApp.id);
-                  },
-                  height: 20.0,
-                  child: Text(
-                    'Movie App',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 20.0,
